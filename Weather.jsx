@@ -19,7 +19,7 @@ const Weather = () => {
     if (element[0].value==="") {
       return 0;
     }
-    #the code in order to use the api 
+    //the code in order to use the api 
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&type=accurate&APPID=dd94f859a0e52d6e4767fddf735f04a7`;
     let response = await fetch(url);
     let data = await response.json();
@@ -32,7 +32,7 @@ const Weather = () => {
     wind[0].innerHTML = data.wind.speed+" km/h";
     temperature[0].innerHTML = Math.floor(data.main.temp)+"°c";
     location[0].innerHTML = data.name;
-    #the different images that will be displayed dependent on the weather
+    //the different images that will be displayed dependent on the weather
     if (data.weather[0].icon==="01d" || data.weather[0].icon==="01n") {setWicon(clear_icon);}
     else if (data.weather[0].icon==="02d" || data.weather[0].icon==="02n") {setWicon(cloud_icon);}
     else if (data.weather[0].icon==="03d" || data.weather[0].icon==="03n") {setWicon(drizzle_icon);}
@@ -43,7 +43,7 @@ const Weather = () => {
     else if (data.weather[0].icon==="13d" || data.weather[0].icon==="13n") {setWicon(snow_icon);}
     else {setWicon(clear_icon);}
   };
-#the html layout of the app
+//the html layout of the app
   return (
     <div className="container">
       <div className="top-bar">
